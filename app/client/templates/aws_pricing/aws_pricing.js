@@ -13,7 +13,7 @@ Template.AwsPricing.events({
       closeOnConfirm: false }, function() {
         swal("Atualização em andamento!",
           "Os registros serão disponibilizados assim que a atualização for finalizada.", "success");
-        Meteor.call("server/updateAWSJSON", function(error, result){
+        Meteor.call("server/updateAWSJSON", "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json", function(error, result){
           if(error){
             console.log("error", error);
           }
@@ -27,10 +27,10 @@ Template.AwsPricing.events({
               offers: Object.keys(respJson.offers).length
             });
 
-            AwsOffers.insert({
+            AwsServices.insert({
               awsPricing: awsPricing,
               offers: respJson.offers
-            });
+            });            
           }
         });
       }

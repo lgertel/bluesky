@@ -1,11 +1,11 @@
 <template name="AwsPricing">
   <section class="content-header">
-    <h1>AWS <small>JSON Pricing</small></h1>
+    <h1>Amazon Web Services <small>JSON Pricing</small></h1>
     <ol class="breadcrumb">
       <li>
-        <a href="{{pathFor 'home'}}"><i class="fa fa-amazon"></i> Home</a>
+        <a href="{{pathFor 'awsPricing'}}"><i class="fa fa-amazon"></i> Amazon Web Services</a>
       </li>
-      <li class="active">Amazon Web Services</li>
+      <li class="active">JSON Pricing</li>
     </ol>
   </section>
   <section class="content">
@@ -14,7 +14,8 @@
         <div class="box box-primary">
 
           <div class="box-body pad table-responsive">
-            <p>Ao clicar no botão, os serviços disponíveis serão atualizados.</p>
+            <p>Ao clicar no botão, os serviços disponíveis serão atualizados.<br>
+            Clique neste <a href="https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json">link</a> para baixar em sua máquina o arquivo JSON disponibilizado pela AWS.</p>
             <button type="button" class="btn btn-block btn-primary"
               id="awsJSON">
               Atualizar Serviços AWS Pricing
@@ -36,7 +37,7 @@
                   <th>Data de Importação</th>
                   <th>Publicação AWS</th>
                   <th>Serviços Disponíveis</th>
-                  <th>Outras Ações</th>
+                  <th>Ações</th>
                 </tr>
                 {{#each pricing}}
                 <tr>
@@ -44,7 +45,9 @@
                   <td>{{formatDate publicationDate 'DD/MM/YYYY'}}</td>
                   <td>{{offers}}</td>
                   <td>
-                    <button type="button" class="btn btn-block btn-info">Detalhes</button>
+                    <a href="{{pathFor 'awsServices' _id=this._id}}" class="btn btn-block btn-info">
+                      Detalhes
+                    </a>
                   </td>
                 </tr>
                 {{/each}}

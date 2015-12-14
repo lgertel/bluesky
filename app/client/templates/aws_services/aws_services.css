@@ -1,9 +1,5 @@
 /*****************************************************************************/
-/*  Server Methods */
+/* AwsServices: Style */
 /*****************************************************************************/
-
-Meteor.methods({
-  'server/updateAWSJSON': function (url) {
-    return Meteor.http.call("GET", url).content;
-  }
-});
+.aws-services {
+}

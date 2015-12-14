@@ -5,8 +5,8 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MULTI CLOUD CALCULATOR</li>
-        <li class="active">
-          <a href="pages/widgets.html">
+        <li class="{{isActiveRoute name='home'}}">
+          <a href="{{pathFor 'home'}}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -15,7 +15,7 @@
             <i class="fa fa-archive"></i> <span>SKY Boxes</span>
           </a>
         </li>
-        <li>
+        <li class="{{isActiveRoute regex='awsPricing|awsServices'}}">
           <a href="{{pathFor 'awsPricing'}}">
             <i class="fa fa-amazon"></i> <span>Amazon Web Services</span>
           </a>

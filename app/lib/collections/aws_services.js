@@ -1,7 +1,7 @@
-AwsPricing = new Mongo.Collection('aws_pricing');
+AwsServices = new Mongo.Collection('aws_services');
 
 // if (Meteor.isServer) {
-//   AwsPricing.allow({
+//   AwsServices.allow({
 //     insert: function (userId, doc) {
 //       return false;
 //     },
@@ -15,7 +15,7 @@ AwsPricing = new Mongo.Collection('aws_pricing');
 //     }
 //   });
 //
-//   AwsPricing.deny({
+//   AwsServices.deny({
 //     insert: function (userId, doc) {
 //       return true;
 //     },

@@ -1,0 +1,50 @@
+<template name="AwsServices">
+  <section class="content-header">
+    <h1>Amazon Web Services <small>Serviços</small></h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="{{pathFor 'awsPricing'}}"><i class="fa fa-amazon"></i> Amazon Web Services</a>
+      </li>
+      <li class="active">Serviços</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-body no-padding">
+            <table class="table table-stripped">
+              <tbody>
+                <tr>
+                  <th>Serviço</th>
+                  <th>URL</th>
+                  <th>Link</th>
+                  <th>Ações</th>
+                </tr>
+                {{#each services offers}}
+                  <tr>
+                    <td>{{offerCode}}</td>
+                    <td>{{currentVersionUrl}}</td>
+                    <td>
+                      <a href="https://pricing.us-east-1.amazonaws.com{{currentVersionUrl}}">Download</a>
+                    </td>
+                    <td>
+                      <a href="{{pathFor 'awsServices' _id=this._id}}" class="btn btn-block btn-info">
+                        Detalhes
+                      </a>
+                    </td>
+                    <td>
+                      <a href="{{pathFor 'awsServices' _id=this._id}}" class="btn btn-block btn-success">
+                        Importar
+                      </a>
+                    </td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

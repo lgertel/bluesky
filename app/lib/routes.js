@@ -15,3 +15,9 @@ Router.route('aws_pricing', {
   controller: 'AwsPricingController',
   where: 'client'
 });
+
+Router.route('aws_pricing/:_id/services', {
+  name: 'awsServices',
+  controller: 'AwsServicesController',
+  where: 'client'
+});
