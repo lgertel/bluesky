@@ -1,3 +1,13 @@
+<body class="skin-blue sidebar-mini">
+    {{renderPage}}
+</body>
 <template name="MasterLayout">
-  {{> yield}}
+  <div class="wrapper">
+    {{> Header}}
+    {{> Sidebar}}
+    <div class="content-wrapper" style="min-height: 916px;">
+      {{> yield}}
+    </div>
+    {{> Footer}}
+  </div>
 </template>

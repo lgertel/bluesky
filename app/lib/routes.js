@@ -4,6 +4,10 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
+Router.onBeforeAction(function(){
+  Session.set('toggleSidebar', false);
+  this.next();
+});
 
 Router.route('/', {
   name: 'home',
