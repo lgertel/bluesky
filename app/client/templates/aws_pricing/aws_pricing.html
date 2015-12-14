@@ -1,0 +1,58 @@
+<template name="AwsPricing">
+  <section class="content-header">
+    <h1>AWS <small>JSON Pricing</small></h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="{{pathFor 'home'}}"><i class="fa fa-amazon"></i> Home</a>
+      </li>
+      <li class="active">Amazon Web Services</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box box-primary">
+
+          <div class="box-body pad table-responsive">
+            <p>Ao clicar no botão, os serviços disponíveis serão atualizados.</p>
+            <button type="button" class="btn btn-block btn-primary"
+              id="awsJSON">
+              Atualizar Serviços AWS Pricing
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">Serviços AWS</h3>
+          </div>
+          <div class="box-body no-padding">
+            <table class="table table-stripped">
+              <tbody>
+                <tr>
+                  <th>Data de Importação</th>
+                  <th>Publicação AWS</th>
+                  <th>Serviços Disponíveis</th>
+                  <th>Outras Ações</th>
+                </tr>
+                {{#each pricing}}
+                <tr>
+                  <td>{{formatDate createdAt 'DD/MM/YYYY'}}</td>
+                  <td>{{formatDate publicationDate 'DD/MM/YYYY'}}</td>
+                  <td>{{offers}}</td>
+                  <td>
+                    <button type="button" class="btn btn-block btn-info">Detalhes</button>
+                  </td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

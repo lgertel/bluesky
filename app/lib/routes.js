@@ -4,13 +4,14 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
-Router.onBeforeAction(function(){
-  Session.set('toggleSidebar', false);
-  this.next();
-});
-
 Router.route('/', {
   name: 'home',
   controller: 'HomeController',
+  where: 'client'
+});
+
+Router.route('aws_pricing', {
+  name: 'awsPricing',
+  controller: 'AwsPricingController',
   where: 'client'
 });
